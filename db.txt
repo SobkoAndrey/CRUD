@@ -1,0 +1,11 @@
+1 Андрей Валентинов 435632 anval@mail.com
+2 Екатерина Горбунко 635298 ekgorb@mail.com
+3 Николай Задорожный 123456 nikzad@mail.com
+4 Виктория Валентинова 435632 vikval@mail.com
+5 Валентин Рогожев 900897 valrog@mail.com
+6 Евгений Куролит 567634 evgkur@mail.com
+7 Людмила Рапаева 312168 ludrap@mail.com
+8 Айзек Азимов 936142 iziz@mail.com
+9 Дарья Веритова 176380 darver@mail.com
+10 Мария Ясная 756432 mariaias@mail.com
+11 Казбек Харзам 765832 kazhar@mail.com

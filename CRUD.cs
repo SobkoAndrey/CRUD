@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.ComponentModel;
 
 namespace CRUDApplication
 {
@@ -17,19 +18,19 @@ namespace CRUDApplication
             Storage.GetSharedInstance().users.Add(user);
         }
 
-        public List<User> Read(Dictionary<string, string> dataForSearch)
+        public BindingList<User> Read(Dictionary<string, string> dataForSearch)
         {
-            var users = new List<User>();
+            var users = new BindingList<User>();
             var newUser = new User(dataForSearch);
 
             foreach(User user in Storage.GetSharedInstance().users)
-            {
-                if (((user.Id == newUser.Id) || (user.Id == 0)) && 
-                    ((user.Name == newUser.Name) || (user.Name == "")) && 
-                    ((user.Surname == newUser.Surname) || (user.Surname == "")) && 
-                    ((user.PhoneNumber == newUser.PhoneNumber) || (user.PhoneNumber == 0)) && 
-                    ((user.Email == newUser.Email) || (user.Email == "")))
-                {
+            { 
+                if (((user.Id == newUser.Id) || (newUser.Id == 0)) &&
+                    ((user.Name == newUser.Name) || (newUser.Name == "")) &&
+                    ((user.Surname == newUser.Surname) || (newUser.Surname == "")) &&
+                    ((user.PhoneNumber == newUser.PhoneNumber) || (newUser.PhoneNumber == 0)) &&
+                    ((user.Email == newUser.Email) || (newUser.Email == "")))
+                { 
                     users.Add(user);
                 }
             }

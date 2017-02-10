@@ -22,6 +22,8 @@ namespace CRUDApplication
         }
 
         public BindingList<User> users = new BindingList<User>();
+        public BindingList<User> matchList = new BindingList<User>();
+
 
         public void GetData(string toFilePath)
         {

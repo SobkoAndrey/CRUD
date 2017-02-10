@@ -44,6 +44,7 @@ namespace CRUDApplication
                 switch (key)
                 {
                     case "id":
+                        if (data[key] == "") { Id = 0; break; }
                         Id = Convert.ToInt32(data[key]);
                             break;
                     case "name":
@@ -53,6 +54,7 @@ namespace CRUDApplication
                         Surname = data[key];
                         break;
                     case "phoneNumber":
+                        if (data[key] == "") { PhoneNumber = 0; break; }
                         PhoneNumber = Convert.ToInt32(data[key]);
                         break;
                     case "email":

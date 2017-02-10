@@ -17,13 +17,6 @@ namespace CRUDApplication
             InitializeComponent();
         }
 
-        private void fillButton_Click(object sender, EventArgs e)
-        {
-            Storage.GetSharedInstance().GetData("../../db.txt");
-            
-            dataGridView1.DataSource = Storage.GetSharedInstance().users;
-        }
-
         private void createButton_Click(object sender, EventArgs e)
         {
             CreateForm createForm = new CreateForm();
@@ -33,8 +26,11 @@ namespace CRUDApplication
 
         private void readButton_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Storage.GetSharedInstance().users;
-            dataGridView1.Refresh();
+            ReadForm readForm = new ReadForm();
+            readForm.ShowDialog();
+           
+            dataGridView2.DataSource = Storage.GetSharedInstance().matchList;
+            
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -45,7 +41,7 @@ namespace CRUDApplication
 
             for (int i = 0; i < Storage.GetSharedInstance().users.Count; i += 1)
             {
-               if (idCellValue == (Storage.GetSharedInstance().users[i].Id))
+                if (idCellValue == (Storage.GetSharedInstance().users[i].Id) & idCellValue > 0)
                {
                    crud.Delete(Storage.GetSharedInstance().users[i]);
                }
@@ -53,5 +49,12 @@ namespace CRUDApplication
 
             dataGridView1.Refresh();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = Storage.GetSharedInstance().users;
+        }
+
+
     }
 }

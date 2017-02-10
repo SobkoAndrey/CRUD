@@ -14,6 +14,8 @@ namespace CRUDApplication
         [STAThread]
         static void Main()
         {
+            Storage.GetSharedInstance().GetData("../../db.txt");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
